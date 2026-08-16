@@ -7,7 +7,7 @@ export const site = {
   tagline: "Inteligência Artificial sob demanda",
   url: "https://mindit.dev",
   email: "contato@mindit.dev",
-  phoneDisplay: "+55 (11) 4000-0000",
+  phoneDisplay: "+55 (11) 99002-9866",
   phoneHref: "+551140000000",
   locale: "pt-BR",
   addressLocality: "São Paulo",
