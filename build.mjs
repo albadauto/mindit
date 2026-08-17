@@ -4,7 +4,7 @@ import { build } from "esbuild";
 import { readFile, writeFile, mkdir, cp, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = __dirname;
@@ -12,6 +12,32 @@ const dist = path.join(root, "dist");
 const assets = path.join(dist, "assets");
 
 const { site, seo, services, faq } = await import("./src/data/content.js");
+const { dingoPolicySeo, dingoPrivacySeo } = await import("./src/data/dingo-content.js");
+
+// Todas as rotas geradas estaticamente (SSG). Cada rota vira uma pasta
+// própria em dist/ com seu index.html (ex.: /dingo/politica ->
+// dist/dingo/politica/index.html), o que funciona com URLs "limpas" em
+// qualquer host estático comum (Vercel, Netlify, Cloudflare Pages, S3...).
+const routes = [
+  {
+    path: "/",
+    seo,
+    priority: "1.0",
+    changefreq: "weekly",
+  },
+  {
+    path: "/dingo/politica",
+    seo: dingoPolicySeo,
+    priority: "0.3",
+    changefreq: "yearly",
+  },
+  {
+    path: "/dingo/privacidade",
+    seo: dingoPrivacySeo,
+    priority: "0.3",
+    changefreq: "yearly",
+  },
+];
 
 async function clean() {
   if (existsSync(dist)) await rm(dist, { recursive: true, force: true });
@@ -44,7 +70,7 @@ async function buildStyles() {
   });
 }
 
-async function buildSsrHtml() {
+async function bundleSsrModule() {
   const ssrOut = path.join(root, ".ssr-tmp.mjs");
   await build({
     entryPoints: [path.join(root, "src/ssr-entry.jsx")],
@@ -57,13 +83,24 @@ async function buildSsrHtml() {
     external: ["react", "react-dom", "react-dom/server"],
     loader: { ".js": "jsx" },
   });
-  const mod = await import(`${ssrOut}?t=${Date.now()}`);
-  const html = mod.renderApp();
+  // Import dinâmico precisa de uma URL file:// válida — um caminho bruto
+  // do Windows (ex.: "C:\...") não é uma URL aceita pelo loader ESM e
+  // gera ERR_UNSUPPORTED_ESM_URL_SCHEME. pathToFileURL resolve isso em
+  // qualquer sistema operacional.
+  const mod = await import(`${pathToFileURL(ssrOut).href}?t=${Date.now()}`);
   await rm(ssrOut, { force: true });
-  return html;
+  return mod;
 }
 
-function buildJsonLd() {
+function buildJsonLd(routePath) {
+  // A home ("/") recebe o conjunto completo de dados estruturados
+  // (catálogo de serviços + FAQ). As demais rotas recebem apenas
+  // Organization + WebSite + um breadcrumb próprio da página.
+  const breadcrumbNames = {
+    "/dingo/politica": "Dingo — Política de Uso",
+    "/dingo/privacidade": "Dingo — Política de Privacidade",
+  };
+
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -126,50 +163,72 @@ function buildJsonLd() {
     })),
   };
 
+  const isHome = routePath === "/";
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Início", item: `${site.url}/` },
-      { "@type": "ListItem", position: 2, name: "Serviços de IA", item: `${site.url}/#servicos` },
-    ],
+    itemListElement: isHome
+      ? [
+          { "@type": "ListItem", position: 1, name: "Início", item: `${site.url}/` },
+          { "@type": "ListItem", position: 2, name: "Serviços de IA", item: `${site.url}/#servicos` },
+        ]
+      : [
+          { "@type": "ListItem", position: 1, name: "Início", item: `${site.url}/` },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: breadcrumbNames[routePath] || routePath,
+            item: `${site.url}${routePath}`,
+          },
+        ],
   };
 
-  return [organization, website, serviceCatalog, faqPage, breadcrumb]
-    .map((obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`)
-    .join("\n");
+  const nodes = isHome
+    ? [organization, website, serviceCatalog, faqPage, breadcrumb]
+    : [organization, website, breadcrumb];
+
+  return nodes.map((obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`).join("\n");
 }
 
-async function buildHtml(appHtml) {
+async function buildHtml(route, appHtml) {
   let template = await readFile(path.join(root, "index.template.html"), "utf8");
+  const canonicalUrl = route.path === "/" ? `${site.url}/` : `${site.url}${route.path}`;
   const replacements = {
-    __TITLE__: seo.title,
-    __DESCRIPTION__: seo.description,
-    __KEYWORDS__: seo.keywords.join(", "),
+    __TITLE__: route.seo.title,
+    __DESCRIPTION__: route.seo.description,
+    __KEYWORDS__: route.seo.keywords.join(", "),
     __URL__: site.url,
+    __CANONICAL__: canonicalUrl,
     __APP_HTML__: appHtml,
     __STYLE_HREF__: "/assets/style.css",
     __SCRIPT_HREF__: "/assets/app.js",
-    __JSON_LD__: buildJsonLd(),
+    __JSON_LD__: buildJsonLd(route.path),
   };
   for (const [key, value] of Object.entries(replacements)) {
     template = template.split(key).join(value);
   }
-  await writeFile(path.join(dist, "index.html"), template, "utf8");
+
+  const outDir = route.path === "/" ? dist : path.join(dist, route.path);
+  await mkdir(outDir, { recursive: true });
+  await writeFile(path.join(outDir, "index.html"), template, "utf8");
 }
 
 async function buildSitemapAndRobots() {
-  const urls = ["/", "/#servicos", "/#como-funciona", "/#diferenciais", "/#resultados", "/#faq", "/#contato"];
+  const anchors = ["/#servicos", "/#como-funciona", "/#diferenciais", "/#resultados", "/#faq", "/#contato"];
+  const urls = [
+    ...routes.map((r) => ({ loc: r.path, changefreq: r.changefreq, priority: r.priority })),
+    ...anchors.map((a) => ({ loc: a, changefreq: "weekly", priority: "0.7" })),
+  ];
   const now = new Date().toISOString().slice(0, 10);
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
     .map(
       (u) => `  <url>
-    <loc>${site.url}${u}</loc>
+    <loc>${site.url}${u.loc}</loc>
     <lastmod>${now}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>${u === "/" ? "1.0" : "0.7"}</priority>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
   </url>`
     )
     .join("\n")}
@@ -216,14 +275,16 @@ async function main() {
   console.log("→ empacotando CSS ...");
   await buildStyles();
 
-  console.log("→ renderizando HTML no servidor (SSG) ...");
-  const appHtml = await buildSsrHtml();
-
-  console.log("→ copiando arquivos públicos (favicons, og-image) ...");
+  console.log("→ copiando arquivos públicos (favicons, og-image, mascote do Dingo) ...");
   await copyPublic();
 
-  console.log("→ gerando index.html com SEO completo ...");
-  await buildHtml(appHtml);
+  console.log(`→ renderizando ${routes.length} rota(s) no servidor (SSG) ...`);
+  const ssrModule = await bundleSsrModule();
+  for (const route of routes) {
+    const appHtml = ssrModule.renderApp(route.path);
+    await buildHtml(route, appHtml);
+    console.log(`  ✓ ${route.path === "/" ? "/" : route.path + "/"}`);
+  }
 
   console.log("→ gerando sitemap.xml, robots.txt e manifest ...");
   await buildSitemapAndRobots();

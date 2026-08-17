@@ -1,11 +1,11 @@
 import React from "react";
 import { hydrateRoot } from "react-dom/client";
-import App from "./App.jsx";
+import Root from "./Root.jsx";
 
 const container = document.getElementById("root");
 
 if (container) {
-  hydrateRoot(container, <App />);
+  hydrateRoot(container, <Root path={window.location.pathname} />);
 }
 
 // Só ativa o estado "oculto antes de revelar" depois que o JS está de

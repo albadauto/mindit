@@ -4,6 +4,7 @@
 export const site = {
   name: "mindit.",
   legalName: "mindit. Inteligência Artificial",
+  cnpj: "66.806.593/0001-96",
   tagline: "Inteligência Artificial sob demanda",
   url: "https://mindit.dev",
   email: "contato@mindit.dev",

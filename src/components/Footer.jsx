@@ -5,7 +5,9 @@ import { IconLinkedin, IconInstagram, IconX } from "./Icons.jsx";
 
 const currentYear = 2026;
 
-export default function Footer() {
+export default function Footer({ home = true }) {
+  const anchor = (href) => (home ? href : `/${href}`);
+
   return (
     <footer className="site-footer">
       <div className="container">
@@ -35,7 +37,7 @@ export default function Footer() {
             <ul>
               {services.slice(0, 6).map((s) => (
                 <li key={s.title}>
-                  <a href="#servicos">{s.title}</a>
+                  <a href={anchor("#servicos")}>{s.title}</a>
                 </li>
               ))}
             </ul>
@@ -46,7 +48,7 @@ export default function Footer() {
             <ul>
               {nav.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href}>{item.label}</a>
+                  <a href={anchor(item.href)}>{item.label}</a>
                 </li>
               ))}
             </ul>
@@ -70,7 +72,11 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>© {currentYear} mindit. Inteligência Artificial. Todos os direitos reservados.</span>
-          <span>CNPJ 00.000.000/0001-00 · Feito com IA sob demanda.</span>
+          <span>CNPJ {site.cnpj} · Feito com IA sob demanda.</span>
+          <div className="footer-legal-links">
+            <a href="/dingo/politica">Política de Uso do Dingo</a>
+            <a href="/dingo/privacidade">Privacidade do Dingo</a>
+          </div>
         </div>
       </div>
     </footer>

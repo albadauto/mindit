@@ -1177,3 +1177,210 @@ html.js-reveal-ready .reveal:not(.in-view) {
     scroll-behavior: auto !important;
   }
 }
+
+/* =========================================================
+   Dingo — páginas legais (/dingo/politica, /dingo/privacidade)
+   Reaproveita a identidade visual da mindit., com um cabeçalho
+   próprio identificando o Dingo através do mascote.
+   ========================================================= */
+.dingo-hero {
+  position: relative;
+  background: var(--navy-950);
+  color: var(--cream-100);
+  padding-top: calc(var(--nav-h) + 56px);
+  padding-bottom: 56px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.dingo-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(55% 60% at 88% 0%, rgba(124, 108, 255, 0.32), transparent 60%),
+    radial-gradient(45% 45% at 4% 100%, rgba(53, 224, 200, 0.2), transparent 65%),
+    linear-gradient(180deg, #07091c 0%, #0b0f2e 100%);
+}
+
+.dingo-hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.dingo-avatar {
+  flex: none;
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  box-shadow: var(--shadow-glow);
+}
+
+.dingo-eyebrow {
+  color: var(--accent-cyan);
+}
+
+.dingo-hero h1 {
+  margin-top: 10px;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.dingo-hero-sub {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted-on-navy);
+  max-width: 62ch;
+}
+
+.dingo-updated {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted-on-navy);
+}
+
+.dingo-legal-section {
+  background: var(--cream-100);
+  padding-top: 56px;
+}
+
+.dingo-legal {
+  max-width: 780px;
+}
+
+.dingo-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.dingo-breadcrumb a {
+  color: var(--muted);
+  transition: color 0.25s var(--ease);
+}
+
+.dingo-breadcrumb a:hover,
+.dingo-breadcrumb a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.dingo-legal-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(11, 15, 46, 0.1);
+}
+
+.dingo-legal-switch a {
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid rgba(11, 15, 46, 0.14);
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.dingo-legal-switch a:hover {
+  border-color: rgba(124, 108, 255, 0.4);
+  color: var(--ink);
+}
+
+.dingo-legal-switch a.active {
+  background: var(--navy-950);
+  border-color: var(--navy-950);
+  color: var(--cream-100);
+}
+
+.legal-content {
+  margin-top: 40px;
+}
+
+.legal-block {
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(11, 15, 46, 0.08);
+}
+
+.legal-block:first-child {
+  padding-top: 0;
+}
+
+.legal-block:last-child {
+  border-bottom: none;
+}
+
+.legal-block h2 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.legal-block p {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+.legal-list {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legal-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.legal-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+}
+
+.footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-legal-links a:hover {
+  color: var(--cream-100);
+}
+
+@media (max-width: 680px) {
+  .dingo-hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .dingo-avatar {
+    width: 64px;
+    height: 64px;
+  }
+}
