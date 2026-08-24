@@ -10,11 +10,10 @@ export default function Process() {
           <span className="eyebrow" style={{ color: "var(--accent-violet)" }}>
             Como funciona
           </span>
-          <h2>Da ideia à IA em produção, em quatro etapas</h2>
+          <h2>Da oportunidade ao SaaS em produção</h2>
           <p>
-            Um processo enxuto, pensado para empresas que precisam de
-            resultado rápido — sem abrir mão de arquitetura sólida e
-            governança.
+            Estratégia, produto, tecnologia e operação em um único parceiro,
+            com ciclos curtos e decisões guiadas pelo negócio.
           </p>
         </Reveal>
 

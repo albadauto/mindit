@@ -12,7 +12,7 @@ export default function Faq() {
           <span className="eyebrow" style={{ color: "var(--accent-violet)" }}>
             Perguntas frequentes
           </span>
-          <h2>Tudo o que você precisa saber sobre IA sob demanda</h2>
+          <h2>Tudo o que você precisa saber para criar ou adotar um SaaS</h2>
         </Reveal>
 
         <Reveal as="div" className="faq-list">

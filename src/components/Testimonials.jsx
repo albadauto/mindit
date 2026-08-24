@@ -4,14 +4,14 @@ import Reveal from "./Reveal.jsx";
 
 export default function Testimonials() {
   return (
-    <section className="section testimonials-section" aria-label="Depoimentos de clientes">
+    <section className="section testimonials-section" aria-label="Formas de trabalhar com a Mind it!">
       <div className="container">
         <Reveal className="section-head center">
           <span className="eyebrow" style={{ color: "var(--accent-violet)" }}>
-            Depoimentos
+            Escolha o melhor caminho
           </span>
-          <h2>Empresas que já aceleraram com IA sob demanda</h2>
-          <p>Exemplos representativos dos resultados que buscamos entregar em cada projeto.</p>
+          <h2>Uma parceria para cada momento do seu produto</h2>
+          <p>Comece do zero, implante uma solução pronta ou evolua o que já está em operação.</p>
         </Reveal>
 
         <div className="testimonial-grid">

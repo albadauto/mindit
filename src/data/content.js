@@ -2,10 +2,10 @@
 // Centralizar aqui facilita trocar copy sem mexer nos componentes.
 
 export const site = {
-  name: "mindit.",
-  legalName: "mindit. Inteligência Artificial",
+  name: "Mind it!",
+  legalName: "Mind it! Software",
   cnpj: "66.806.593/0001-96",
-  tagline: "Inteligência Artificial sob demanda",
+  tagline: "SaaS sob demanda e SaaS pronto",
   url: "https://mindit.dev",
   email: "contato@mindit.dev",
   phoneDisplay: "+55 (11) 99002-9866",
@@ -22,7 +22,7 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Serviços", href: "#servicos" },
+  { label: "Soluções SaaS", href: "#servicos" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Diferenciais", href: "#diferenciais" },
   { label: "Resultados", href: "#resultados" },
@@ -31,200 +31,200 @@ export const nav = [
 ];
 
 export const hero = {
-  eyebrow: "IA sob demanda para empresas",
-  title: "Inteligência Artificial sob demanda para o seu negócio.",
-  highlight: "sob demanda",
+  eyebrow: "SaaS sob demanda + SaaS pronto",
+  title: "Software que transforma ideias em SaaS de verdade.",
+  highlight: "SaaS de verdade",
   subtitle:
-    "A mindit. conecta sua empresa aos serviços de IA mais avançados do mercado: agentes autônomos, automação, dados e IA generativa — implementados por um time sênior, sem complexidade técnica e sem contratos engessados.",
-  primaryCta: { label: "Solicitar diagnóstico gratuito", href: "#contato" },
-  secondaryCta: { label: "Ver serviços de IA", href: "#servicos" },
+    "A Mind it! desenha, desenvolve e evolui produtos SaaS sob medida para o seu negócio — e oferece soluções prontas para quem precisa começar agora.",
+  primaryCta: { label: "Quero criar meu SaaS", href: "#contato" },
+  secondaryCta: { label: "Conhecer as soluções", href: "#servicos" },
   stats: [
-    { value: "48h", label: "para o primeiro protótipo funcional" },
-    { value: "+35", label: "modelos e provedores de IA integrados" },
-    { value: "24/7", label: "agentes de IA operando sem pausa" },
+    { value: "01", label: "parceiro da estratégia à operação" },
+    { value: "100%", label: "produto alinhado ao seu negócio" },
+    { value: "Contínuo", label: "suporte e evolução do SaaS" },
   ],
 };
 
 export const trustBar = {
-  label: "Tecnologia por trás da mindit.",
+  label: "Tudo o que um SaaS moderno precisa",
   items: [
-    "GPT-4 / GPT-5",
-    "Claude",
-    "Gemini",
-    "Llama",
-    "LangChain",
-    "Vector DB",
-    "MLOps",
-    "AWS · GCP · Azure",
+    "Produto & UX",
+    "Web & Mobile",
+    "Cloud",
+    "APIs & Integrações",
+    "Assinaturas",
+    "Dashboards",
+    "Automação",
+    "IA aplicada",
   ],
 };
 
 export const services = [
   {
     icon: "agent",
-    title: "Agentes de IA sob demanda",
+    title: "SaaS sob demanda",
     description:
-      "Agentes autônomos que executam tarefas, respondem clientes e tomam decisões operacionais 24 horas por dia, integrados aos seus sistemas.",
-    tags: ["Automação", "Atendimento", "Operações"],
+      "Planejamos e construímos uma plataforma exclusiva para resolver o desafio da sua empresa e sustentar seu modelo de negócio.",
+    tags: ["Descoberta", "MVP", "Escala"],
   },
   {
     icon: "automation",
-    title: "Automação inteligente de processos",
+    title: "SaaS pronto para usar",
     description:
-      "Unimos RPA e IA para eliminar tarefas repetitivas, reduzir erros manuais e acelerar fluxos internos de ponta a ponta.",
-    tags: ["RPA + IA", "Eficiência", "Integrações"],
+      "Soluções próprias, validadas e configuráveis para sua operação começar mais rápido, com suporte da Mind it!.",
+    tags: ["Implantação", "Configuração", "Suporte"],
   },
   {
     icon: "chat",
-    title: "Chatbots & atendimento inteligente",
+    title: "Portais e plataformas B2B",
     description:
-      "Assistentes virtuais que entendem contexto, resolvem em segundos e escalam seu atendimento sem perder qualidade.",
-    tags: ["Suporte 24/7", "WhatsApp", "Omnichannel"],
+      "Ambientes para clientes, parceiros e equipes, com permissões, fluxos, indicadores e integrações em um só lugar.",
+    tags: ["B2B", "Multiempresa", "Gestão"],
   },
   {
     icon: "generative",
-    title: "IA generativa sob demanda",
+    title: "Aplicações web e mobile",
     description:
-      "Geração de texto, imagem, vídeo e código treinada na voz da sua marca — do conteúdo de marketing ao software interno.",
-    tags: ["Conteúdo", "Criativo", "Código"],
+      "Experiências rápidas, responsivas e intuitivas para transformar processos complexos em rotinas simples.",
+    tags: ["Web", "Mobile", "Experiência"],
   },
   {
     icon: "data",
-    title: "Análise de dados & machine learning",
+    title: "Dados e dashboards",
     description:
-      "Modelos preditivos e pipelines de dados que transformam informação dispersa em decisões de negócio confiáveis.",
-    tags: ["Previsão", "BI", "MLOps"],
+      "Centralize informações, acompanhe indicadores e tome decisões com painéis claros e dados confiáveis.",
+    tags: ["Analytics", "Indicadores", "BI"],
   },
   {
     icon: "vision",
-    title: "Visão computacional",
+    title: "Integrações e automações",
     description:
-      "Reconhecimento de imagens e vídeo em tempo real para inspeção de qualidade, segurança e automação industrial.",
-    tags: ["Inspeção", "Segurança", "Indústria 4.0"],
+      "Conectamos seu SaaS ao ecossistema da empresa e automatizamos tarefas para reduzir retrabalho e ganhar velocidade.",
+    tags: ["APIs", "ERP & CRM", "Workflows"],
   },
   {
     icon: "nlp",
-    title: "Processamento de linguagem natural",
+    title: "IA aplicada ao produto",
     description:
-      "Extração de insights, sumarização e classificação de texto em escala — de contratos a milhões de interações.",
-    tags: ["NLP", "Sumarização", "Classificação"],
+      "Incluímos inteligência artificial onde ela gera valor real: atendimento, análise, recomendação e produtividade.",
+    tags: ["Assistentes", "Análise", "Automação"],
   },
   {
     icon: "consulting",
-    title: "Consultoria & integração de IA",
+    title: "Evolução e sustentação",
     description:
-      "Arquitetura, governança e integração de IA aos sistemas que sua empresa já usa, com segurança e conformidade.",
-    tags: ["Arquitetura", "Governança", "LGPD"],
+      "Monitoramos, corrigimos e evoluímos o produto com base no uso, nos objetivos e nas novas oportunidades do negócio.",
+    tags: ["Cloud", "Segurança", "Roadmap"],
   },
 ];
 
 export const process = [
   {
     step: "01",
-    title: "Diagnóstico",
+    title: "Descoberta",
     description:
-      "Mapeamos processos, dados e oportunidades reais de IA no seu negócio em uma sessão gratuita de descoberta.",
+      "Entendemos o problema, o público, a operação e o modelo de negócio antes de definir a solução.",
   },
   {
     step: "02",
-    title: "Arquitetura sob medida",
+    title: "Estratégia de produto",
     description:
-      "Desenhamos a solução ideal — modelo, provedores e integrações — para o seu caso, sem tecnologia genérica.",
+      "Priorizamos funcionalidades, desenhamos a experiência e definimos uma arquitetura preparada para crescer.",
   },
   {
     step: "03",
-    title: "Implementação ágil",
+    title: "Construção e validação",
     description:
-      "Colocamos o primeiro protótipo no ar em dias, não meses, com ciclos curtos de validação com o seu time.",
+      "Entregamos em ciclos curtos, validando o produto com usuários e ajustando o caminho com transparência.",
   },
   {
     step: "04",
-    title: "Escala & suporte contínuo",
+    title: "Lançamento e evolução",
     description:
-      "Monitoramos, otimizamos e escalamos a solução sob demanda, com suporte técnico sênior sempre disponível.",
+      "Colocamos o SaaS em produção e seguimos ao seu lado com suporte, métricas e evolução contínua.",
   },
 ];
 
 export const differentiators = [
   {
-    title: "Velocidade de implantação",
-    description: "Primeiros resultados em dias, com metodologia ágil e times dedicados.",
+    title: "Visão de produto",
+    description: "Tecnologia orientada ao problema, ao usuário e ao resultado do negócio.",
   },
   {
-    title: "Segurança & governança",
-    description: "Arquitetura em conformidade com LGPD e boas práticas de segurança de dados.",
+    title: "Arquitetura escalável",
+    description: "Base técnica preparada para novos clientes, integrações e funcionalidades.",
   },
   {
-    title: "Time sênior multidisciplinar",
-    description: "Engenheiros de IA, cientistas de dados e especialistas de produto no seu projeto.",
+    title: "Experiência simples",
+    description: "Interfaces claras para aumentar adoção e reduzir esforço operacional.",
   },
   {
-    title: "Modelo sob demanda",
-    description: "Pague pelo que usar — sem contratos longos ou equipe interna para manter.",
+    title: "Entrega transparente",
+    description: "Ciclos visíveis, prioridades compartilhadas e decisões sem caixa-preta.",
   },
   {
-    title: "Tecnologia de ponta",
-    description: "Os melhores LLMs, visão computacional e MLOps, sempre atualizados.",
+    title: "Segurança e LGPD",
+    description: "Boas práticas desde a arquitetura até a operação do produto.",
   },
   {
-    title: "Suporte contínuo 24/7",
-    description: "Monitoramento e evolução constante das soluções após o lançamento.",
+    title: "Parceria de longo prazo",
+    description: "Suporte e evolução para o SaaS acompanhar o crescimento da empresa.",
   },
 ];
 
 export const resultsStats = [
-  { value: "+120", label: "projetos de IA entregues" },
-  { value: "92%", label: "de automação em processos elegíveis" },
-  { value: "3.4x", label: "ROI médio reportado pelos clientes" },
-  { value: "48h", label: "para o primeiro protótipo funcional" },
+  { value: "MVP", label: "para validar antes de escalar" },
+  { value: "Cloud", label: "infraestrutura preparada para crescer" },
+  { value: "UX", label: "experiência pensada para adoção" },
+  { value: "Dados", label: "decisões guiadas pelo uso real" },
 ];
 
 export const testimonials = [
   {
     quote:
-      "Em poucas semanas, a mindit. automatizou boa parte do nosso atendimento e liberou o time para focar no que realmente importa.",
-    author: "Diretor de Operações",
-    role: "Varejo & E-commerce",
+      "Você traz a visão do negócio. A Mind it! transforma essa visão em produto, da primeira decisão ao software em produção.",
+    author: "SaaS sob demanda",
+    role: "Para ideias e operações únicas",
   },
   {
     quote:
-      "A implementação foi surpreendentemente rápida. Tínhamos um agente de IA em produção antes do que qualquer fornecedor havia prometido.",
-    author: "Head de Tecnologia",
-    role: "Serviços Financeiros",
+      "Quando velocidade é prioridade, nossas soluções prontas encurtam o caminho entre a necessidade e o resultado.",
+    author: "SaaS pronto",
+    role: "Para começar com mais agilidade",
   },
   {
     quote:
-      "O time da mindit. traduziu um problema complexo de dados em uma solução simples de usar. Suporte excelente do início ao fim.",
-    author: "Gerente de Inovação",
-    role: "Indústria",
+      "Depois do lançamento, seguimos medindo, melhorando e preparando o produto para a próxima fase do negócio.",
+    author: "Evolução contínua",
+    role: "Para crescer com segurança",
   },
 ];
 
 export const faq = [
   {
-    question: "O que significa \"IA sob demanda\"?",
+    question: "O que é desenvolvimento de SaaS sob demanda?",
     answer:
-      "É a possibilidade de acessar os principais serviços de Inteligência Artificial — agentes autônomos, automação, IA generativa, análise de dados e mais — sem precisar montar uma equipe técnica interna nem investir em infraestrutura própria. Você contrata sob demanda, conforme a necessidade e o crescimento do seu negócio.",
+      "É a criação de um produto de software por assinatura desenhado para uma necessidade específica. A Mind it! cuida da estratégia, experiência, desenvolvimento, infraestrutura e evolução.",
   },
   {
-    question: "Quanto tempo leva para implementar uma solução de IA?",
+    question: "Quanto tempo leva para lançar um SaaS?",
     answer:
-      "O primeiro protótipo funcional costuma ficar pronto em até 48 horas após o diagnóstico. Projetos completos, dependendo da complexidade, vão de 2 a 8 semanas até a entrada em produção.",
+      "O prazo depende do escopo e das integrações. Após a descoberta, definimos um MVP com prioridades e cronograma claro para colocar valor nas mãos dos usuários o quanto antes.",
   },
   {
-    question: "Preciso ter uma equipe técnica interna?",
+    question: "Preciso ter equipe técnica interna?",
     answer:
-      "Não. A mindit. atua como sua equipe de IA sob demanda: cuidamos da arquitetura, implementação, integração e suporte contínuo. Sua equipe participa das decisões de negócio, não da parte técnica.",
+      "Não. Atuamos como parceiro de produto e tecnologia. Sua equipe participa das decisões do negócio enquanto cuidamos da construção e da operação técnica.",
   },
   {
-    question: "A mindit. atende empresas de qualquer porte?",
+    question: "Qual é a diferença entre SaaS sob demanda e SaaS pronto?",
     answer:
-      "Sim. Trabalhamos com startups, scale-ups e grandes empresas, adaptando o escopo e o investimento à realidade e à maturidade digital de cada cliente.",
+      "O SaaS sob demanda é criado para o seu contexto. O SaaS pronto já possui uma base funcional validada e recebe configurações para sua operação, reduzindo tempo de implantação.",
   },
   {
-    question: "Como funciona o modelo de cobrança?",
+    question: "A Mind it! também mantém o produto depois do lançamento?",
     answer:
-      "Trabalhamos com planos sob demanda, por projeto ou por assinatura mensal, conforme o volume de uso e o escopo dos serviços de IA contratados. Não exigimos contratos longos.",
+      "Sim. Podemos cuidar do monitoramento, suporte, infraestrutura, correções e evolução do roadmap para que o SaaS acompanhe o crescimento do negócio.",
   },
   {
     question: "Meus dados estão seguros?",
@@ -234,19 +234,17 @@ export const faq = [
 ];
 
 export const seo = {
-  title: "mindit. | Inteligência Artificial sob Demanda para Empresas",
+  title: "Mind it! | Desenvolvimento de SaaS sob Demanda e SaaS Pronto",
   description:
-    "A mindit. é a plataforma de Inteligência Artificial sob demanda: agentes de IA, automação inteligente, chatbots, IA generativa, análise de dados e visão computacional para empresas de qualquer porte.",
+    "A Mind it! cria produtos SaaS sob medida e oferece soluções SaaS prontas para empresas que querem lançar, digitalizar e escalar operações.",
   keywords: [
-    "inteligência artificial",
-    "IA sob demanda",
-    "agentes de IA",
-    "automação inteligente",
-    "IA para empresas",
-    "chatbot com IA",
-    "IA generativa",
-    "machine learning",
-    "consultoria de IA",
-    "visão computacional",
+    "desenvolvimento SaaS",
+    "SaaS sob demanda",
+    "SaaS pronto",
+    "software sob medida",
+    "desenvolvimento de plataforma",
+    "MVP SaaS",
+    "produto digital",
+    "software para empresas",
   ],
 };

@@ -17,9 +17,8 @@ export default function Hero() {
           </span>
 
           <h1>
-            Inteligência Artificial{" "}
-            <span className="gradient-text">sob demanda</span> para o seu
-            negócio.
+            Software que transforma ideias em{" "}
+            <span className="gradient-text">SaaS de verdade.</span>
           </h1>
 
           <p className="lead">{hero.subtitle}</p>
@@ -50,13 +49,13 @@ export default function Hero() {
           <div className="orbit-card" />
           <div className="core" />
           <div className="node-chip chip-1">
-            <span className="chip-dot" /> Agentes de IA
+            <span className="chip-dot" /> Produto sob demanda
           </div>
           <div className="node-chip chip-2">
-            <span className="chip-dot" /> IA Generativa
+            <span className="chip-dot" /> SaaS pronto
           </div>
           <div className="node-chip chip-3">
-            <span className="chip-dot" /> Machine Learning
+            <span className="chip-dot" /> Evolução contínua
           </div>
         </div>
       </div>

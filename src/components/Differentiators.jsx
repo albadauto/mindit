@@ -8,13 +8,12 @@ export default function Differentiators() {
       <div className="container">
         <Reveal className="section-head center">
           <span className="eyebrow" style={{ color: "var(--accent-cyan)" }}>
-            Por que a mindit.
+            Por que a Mind it!
           </span>
-          <h2>Tecnologia de ponta, entregue com velocidade</h2>
+          <h2>Produto bem pensado. Software pronto para crescer.</h2>
           <p>
-            Combinamos os melhores modelos de IA do mercado com um processo de
-            implementação enxuto — para sua empresa competir com quem já
-            nasceu digital.
+            Unimos visão de produto, engenharia e experiência do usuário para
+            construir soluções sustentáveis, seguras e simples de operar.
           </p>
         </Reveal>
 

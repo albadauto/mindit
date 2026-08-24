@@ -26,8 +26,8 @@ export default function Navbar({ home = true }) {
     <>
       <header className={`navbar ${scrolled || open ? "navbar--scrolled" : ""}`}>
         <div className="container">
-          <a href={home ? "#top" : "/"} aria-label="mindit. — página inicial">
-            <Logo tone="light" size={24} />
+          <a href={home ? "#top" : "/"} aria-label="Mind it! — página inicial">
+            <Logo size={34} />
           </a>
 
           <nav className="nav-links" aria-label="Navegação principal">
@@ -40,10 +40,10 @@ export default function Navbar({ home = true }) {
 
           <div className="nav-cta">
             <a href={anchor("#contato")} className="btn btn-ghost btn-sm">
-              Falar com especialista
+              Conhecer soluções
             </a>
             <a href={anchor("#contato")} className="btn btn-primary btn-sm">
-              Solicitar diagnóstico
+              Criar meu SaaS
             </a>
             <button
               type="button"
@@ -65,7 +65,7 @@ export default function Navbar({ home = true }) {
           </a>
         ))}
         <a href={anchor("#contato")} className="btn btn-primary" onClick={() => setOpen(false)}>
-          Solicitar diagnóstico gratuito
+          Conversar sobre meu SaaS
         </a>
       </div>
     </>

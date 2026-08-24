@@ -18,9 +18,9 @@ export default function App() {
       <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
         <defs>
           <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#7c6cff" />
-            <stop offset="55%" stopColor="#5b8bff" />
-            <stop offset="100%" stopColor="#35e0c8" />
+            <stop offset="0%" stopColor="#ff8a22" />
+            <stop offset="55%" stopColor="#ff6413" />
+            <stop offset="100%" stopColor="#e94a0c" />
           </linearGradient>
         </defs>
       </svg>

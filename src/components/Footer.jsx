@@ -13,27 +13,26 @@ export default function Footer({ home = true }) {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Logo tone="light" size={24} />
+            <Logo size={38} />
             <p>
-              Plataforma de Inteligência Artificial sob demanda: agentes
-              autônomos, automação, IA generativa e ciência de dados para
-              empresas que querem competir na era da IA.
+              Desenvolvimento de SaaS sob demanda e soluções SaaS prontas para
+              empresas que querem crescer com tecnologia.
             </p>
             <div className="footer-social">
-              <a href={site.social.linkedin} aria-label="mindit. no LinkedIn" target="_blank" rel="noreferrer noopener">
+              <a href={site.social.linkedin} aria-label="Mind it! no LinkedIn" target="_blank" rel="noreferrer noopener">
                 <IconLinkedin />
               </a>
-              <a href={site.social.instagram} aria-label="mindit. no Instagram" target="_blank" rel="noreferrer noopener">
+              <a href={site.social.instagram} aria-label="Mind it! no Instagram" target="_blank" rel="noreferrer noopener">
                 <IconInstagram />
               </a>
-              <a href={site.social.x} aria-label="mindit. no X" target="_blank" rel="noreferrer noopener">
+              <a href={site.social.x} aria-label="Mind it! no X" target="_blank" rel="noreferrer noopener">
                 <IconX />
               </a>
             </div>
           </div>
 
           <div className="footer-col">
-            <h4>Serviços de IA</h4>
+            <h4>Soluções SaaS</h4>
             <ul>
               {services.slice(0, 6).map((s) => (
                 <li key={s.title}>
@@ -71,8 +70,8 @@ export default function Footer({ home = true }) {
         </div>
 
         <div className="footer-bottom">
-          <span>© {currentYear} mindit. Inteligência Artificial. Todos os direitos reservados.</span>
-          <span>CNPJ {site.cnpj} · Feito com IA sob demanda.</span>
+          <span>© {currentYear} Mind it! Software. Todos os direitos reservados.</span>
+          <span>CNPJ {site.cnpj} · SaaS pensado para negócios reais.</span>
           <div className="footer-legal-links">
             <a href="/dingo/politica">Política de Uso do Dingo</a>
             <a href="/dingo/privacidade">Privacidade do Dingo</a>

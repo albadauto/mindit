@@ -9,16 +9,14 @@ export default function Services() {
       <div className="container">
         <Reveal className="section-head center">
           <span className="eyebrow" style={{ color: "var(--accent-violet)" }}>
-            Serviços de IA
+            Nossas soluções
           </span>
           <h2>
-            Os principais serviços de Inteligência Artificial, prontos para o
-            seu negócio
+            Do SaaS sob medida ao produto pronto para usar
           </h2>
           <p>
-            Da automação ao atendimento, da análise de dados à IA generativa:
-            acesse sob demanda a tecnologia que grandes empresas de IA levam
-            meses para construir internamente.
+            Criamos plataformas alinhadas ao seu modelo de negócio e também
+            oferecemos soluções próprias para acelerar operações desde o primeiro dia.
           </p>
         </Reveal>
 

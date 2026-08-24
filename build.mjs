@@ -105,7 +105,7 @@ function buildJsonLd(routePath) {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${site.url}/#organization`,
-    name: "mindit.",
+    name: "Mind it!",
     legalName: site.legalName,
     url: site.url,
     logo: `${site.url}/favicon-512.png`,
@@ -127,7 +127,7 @@ function buildJsonLd(routePath) {
     "@type": "WebSite",
     "@id": `${site.url}/#website`,
     url: site.url,
-    name: "mindit.",
+    name: "Mind it!",
     publisher: { "@id": `${site.url}/#organization` },
     inLanguage: "pt-BR",
   };
@@ -135,12 +135,12 @@ function buildJsonLd(routePath) {
   const serviceCatalog = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Serviços de Inteligência Artificial sob demanda",
+    serviceType: "Desenvolvimento de SaaS sob demanda e soluções SaaS prontas",
     provider: { "@id": `${site.url}/#organization` },
     areaServed: "BR",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Serviços de IA",
+      name: "Soluções SaaS",
       itemListElement: services.map((s, i) => ({
         "@type": "Offer",
         position: i + 1,
@@ -170,7 +170,7 @@ function buildJsonLd(routePath) {
     itemListElement: isHome
       ? [
           { "@type": "ListItem", position: 1, name: "Início", item: `${site.url}/` },
-          { "@type": "ListItem", position: 2, name: "Serviços de IA", item: `${site.url}/#servicos` },
+          { "@type": "ListItem", position: 2, name: "Soluções SaaS", item: `${site.url}/#servicos` },
         ]
       : [
           { "@type": "ListItem", position: 1, name: "Início", item: `${site.url}/` },
@@ -244,8 +244,8 @@ Sitemap: ${site.url}/sitemap.xml
   await writeFile(path.join(dist, "robots.txt"), robots, "utf8");
 
   const manifest = {
-    name: "mindit. — Inteligência Artificial sob demanda",
-    short_name: "mindit.",
+    name: "Mind it! — SaaS sob demanda e SaaS pronto",
+    short_name: "Mind it!",
     start_url: "/",
     display: "standalone",
     background_color: "#0b0f2e",
