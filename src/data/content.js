@@ -3,8 +3,8 @@
 
 export const site = {
   name: "Mind it!",
-  legalName: "Mind it! Software",
-  cnpj: "66.806.593/0001-96",
+  legalName: "MIND IT SOLUÇÕES DIGITAIS I.S",
+  cnpj: "69.533.366/0001-22",
   tagline: "SaaS sob demanda e SaaS pronto",
   url: "https://mindit.dev",
   email: "contato@mindit.dev",
@@ -16,8 +16,8 @@ export const site = {
   addressCountry: "BR",
   social: {
     linkedin: "https://www.linkedin.com/company/mindit",
-    instagram: "https://www.instagram.com/mindit.ai",
-    x: "https://x.com/mindit_ai",
+    instagram: "https://www.instagram.com/mindit.solucoes",
+    x: "https://x.com/mindit_solucoes",
   },
 };
 
@@ -148,19 +148,23 @@ export const process = [
 export const differentiators = [
   {
     title: "Visão de produto",
-    description: "Tecnologia orientada ao problema, ao usuário e ao resultado do negócio.",
+    description:
+      "Tecnologia orientada ao problema, ao usuário e ao resultado do negócio.",
   },
   {
     title: "Arquitetura escalável",
-    description: "Base técnica preparada para novos clientes, integrações e funcionalidades.",
+    description:
+      "Base técnica preparada para novos clientes, integrações e funcionalidades.",
   },
   {
     title: "Experiência simples",
-    description: "Interfaces claras para aumentar adoção e reduzir esforço operacional.",
+    description:
+      "Interfaces claras para aumentar adoção e reduzir esforço operacional.",
   },
   {
     title: "Entrega transparente",
-    description: "Ciclos visíveis, prioridades compartilhadas e decisões sem caixa-preta.",
+    description:
+      "Ciclos visíveis, prioridades compartilhadas e decisões sem caixa-preta.",
   },
   {
     title: "Segurança e LGPD",
@@ -168,7 +172,8 @@ export const differentiators = [
   },
   {
     title: "Parceria de longo prazo",
-    description: "Suporte e evolução para o SaaS acompanhar o crescimento da empresa.",
+    description:
+      "Suporte e evolução para o SaaS acompanhar o crescimento da empresa.",
   },
 ];
 
